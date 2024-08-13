@@ -1,0 +1,12 @@
+<div class="convert-container">
+    <input type="number" [(ngModel)]="value" placeholder="Enter a value">
+    <button (click)="convert()">Convert</button>
+  </div>
+  
+  <div *ngIf="convertedValue !== null">
+    <p>Converted Value: {{ convertedValue }}</p>
+  </div>
+  
+  <div *ngIf="errorMessage">
+    <p>Error: {{ errorMessage }}</p>
+  </div>
