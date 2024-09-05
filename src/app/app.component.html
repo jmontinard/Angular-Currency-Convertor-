@@ -1,3 +1,7 @@
+<div class="app-title">
+  <h1>Currency Converter</h1>
+</div>
+
 <div class="app-container">
   <app-currency-selector (currencyChange)="onCurrencyChange($event)"></app-currency-selector>
   <app-currency-converter [fromCurrency]="fromCurrency" [toCurrency]="toCurrency"></app-currency-converter>

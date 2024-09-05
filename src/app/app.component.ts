@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { CurrencyConverterComponent } from './currency-converter/currency-converter.component';
 import { CurrencySelectorComponent } from './currency-selector/currency-selector.component';
 import { HttpClientModule } from '@angular/common/http';  // Import this
+import { GeoLocationComponent } from './geo-location/geo-location.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CurrencyConverterComponent, CurrencySelectorComponent,HttpClientModule],
+  imports: [RouterOutlet, CurrencyConverterComponent, CurrencySelectorComponent,HttpClientModule, GeoLocationComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

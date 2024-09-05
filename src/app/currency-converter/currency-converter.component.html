@@ -1,12 +1,29 @@
 <div class="convert-container">
-    <input type="number" [(ngModel)]="value" placeholder="Enter a value">
-    <button (click)="convert()">Convert</button>
-  </div>
-  
-  <div *ngIf="convertedValue !== null">
-    <p>Converted Value: {{ convertedValue }}</p>
-  </div>
-  
-  <div *ngIf="errorMessage">
-    <p>Error: {{ errorMessage }}</p>
-  </div>
+  <input type="number" [(ngModel)]="valueModel" placeholder="Enter a value">
+  <button (click)="convert()">Convert</button>
+</div>
+
+<div *ngIf="convertedValue() !== null">
+  <p>Converted Value: {{ convertedValue() }}</p>
+</div>
+
+<div *ngIf="errorMessage()">
+  <p>Error: {{ errorMessage() }}</p>
+</div>
+
+<table *ngIf="conversionHistory.length > 0">
+  <thead>
+    <tr>
+      <th>From Currency</th>
+      <th>To Currency</th>
+      <th>Converted Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let entry of conversionHistory">
+      <td>{{ entry.fromCurrency }}</td>
+      <td>{{ entry.toCurrency }}</td>
+      <td>{{ entry.convertedValue }}</td>
+    </tr>
+  </tbody>
+</table>

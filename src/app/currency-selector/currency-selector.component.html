@@ -1,4 +1,49 @@
+<!-- <div class="currency-selector-container">
+  <select [(ngModel)]="fromCurrency.set($event.target.value)" (ngModelChange)="onCurrencyChange()">
+    <option *ngFor="let currency of currencies" [value]="currency.code">
+      {{currency.code}} - {{currency.name}}
+    </option>
+  </select>
+
+  <select [(ngModel)]="toCurrency.set($event.target.value)" (ngModelChange)="onCurrencyChange()">
+    <option *ngFor="let currency of currencies" [value]="currency.code">
+      {{currency.code}} - {{currency.name}}
+    </option>
+  </select>
+</div> -->
+
+
 <div class="currency-selector-container">
+  <select [ngModel]="fromCurrency()" (ngModelChange)="fromCurrency.set($event)">
+    <option *ngFor="let currency of currencies" [value]="currency.code">
+      {{currency.code}} - {{currency.name}}
+    </option>
+  </select>
+
+  <select [ngModel]="toCurrency()" (ngModelChange)="toCurrency.set($event)">
+    <option *ngFor="let currency of currencies" [value]="currency.code">
+      {{currency.code}} - {{currency.name}}
+    </option>
+  </select>
+
+  <button (click)="getIpAddress()">Get Location</button>
+</div>
+
+
+
+
+
+<!-- test = signal<T>()
+
+  TOSIGNAL()
+
+  computed
+
+  <model> for two way binding 
+     -->
+
+
+<!-- <div class="currency-selector-container">
   <select [(ngModel)]="fromCurrency" (ngModelChange)="onCurrencyChange()">
     <option *ngFor="let currency of currencies" [value]="currency.code">
       {{currency.code}} - {{currency.name}}
@@ -10,4 +55,4 @@
       {{currency.code}} - {{currency.name}}
     </option>
   </select>
-</div>
+</div> -->
